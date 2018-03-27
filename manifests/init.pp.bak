@@ -43,13 +43,29 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class web {
-	class { 'web::package': }
-        class { 'web::copy': }
-        class { 'web::restart': }
+
 #	notify { 'This is Houston Calling in Tango!!! Respond Pls!!': }
 #	package { 'httpd':
 #		ensure => present,
 #		}
 
+package { 'apache':
+	ensure	=> present ,
+	name	=> 'httpd',
+	}
+
+file { 'html files':
+	path	=> '/var/www/html/index.html',
+	ensure	=> file,
+	source	=> 'puppet:///modules/web/index.html',
+	owner	=> 'apache',
+	mode	=> '0755',
+	}
+
+service { 'restart httpd':
+	name	=> 'httpd',
+	ensure	=> running,
+	restart	=> true,
+}
 
 }
