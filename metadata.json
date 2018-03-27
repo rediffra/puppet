@@ -1,0 +1,18 @@
+{
+  "name": "vijay-web",
+  "version": "0.1.0",
+  "author": "Vijay M",
+  "summary": "this is a test module for webservices deployment",
+  "license": "Apache-2.0",
+  "source": "https://github.com/rediffra/puppet",
+  "project_page": "https://github.com/rediffra/puppet",
+  "issues_url": "https://github.com/rediffra/puppet/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+
