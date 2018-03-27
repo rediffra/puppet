@@ -43,10 +43,13 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class web {
-	class { 'web::package': }
-        class { 'web::copy': }
-        class { 'web::restart': }
-#	notify { 'This is Houston Calling in Tango!!! Respond Pls!!': }
+#	class { 'web::package': }
+#        class { 'web::copy': }
+#        class { 'web::restart': }
+	notify { 'This is Houston Calling in Tango!!! Respond Pls!!': }
+	notify {"I know you are ${facts['os']['family']}":}
+	notify {"I know your hostname is  ${facts['networking']['hostname']}":}
+
 #	package { 'httpd':
 #		ensure => present,
 #		}
